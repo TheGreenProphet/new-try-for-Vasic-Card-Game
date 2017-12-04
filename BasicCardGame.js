@@ -7,59 +7,55 @@ let numberOfHandCards; //Anzahl der maximalen Handkarten
 let enemyHandCards = []; //Handkarten des NPC's
 let playerHandCards = []; //Handkarten des Spielers
 
-
-window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
+const Deck = [
+  "Funken",
+  "Funken",
+  "Funken",
+  "Funken",
+  "Funken",
+  "Glut",
+  "Glut",
+  "Glut",
+  "Glut",
+  "Feuerbal",
+  "Feuerbal",
+  "Feuerbal",
+  "Sturm",
+  "Sturm",
+  "Sturm",
+  "Sturm",
+  "Sturm",
+  "Orkan",
+  "Orkan",
+  "Orkan",
+  "Panic Button",
+  "Panic Button",
+  "Panic Button",
+  "Panic Button",
+  "Blithschlag",
+  "Blithschlag",
+  "Blithschlag",
+  "Blithschlag",
+  "Erdbeben",
+  "Erdbeben",
+  "Erdbeben",
+  "Heilender Segen",
+  "Heilender Segen",
+  "Heilender Segen",
+  "Heilender Segen",
+  "Sintflut",
+  "Sintflut",
+  "Eiszeit",
+  "Eiszeit",
+  "Eiszeit"
+];
 
 function preGameFunction() { //vorbereitende Funktion
-
   enemyHealthPoints,
   playerHealthPoints = [20, 20]; //Festsetzen der Spielerlebenspunkte
   numberOfHandCards = 5; //Festsetzen der maximale Handkartenzahl
-  deck = [
-    "Funken",
-    "Funken",
-    "Funken",
-    "Funken",
-    "Funken",
-    "Glut",
-    "Glut",
-    "Glut",
-    "Glut",
-    "Feuerbal",
-    "Feuerbal",
-    "Feuerbal",
-    "Sturm",
-    "Sturm",
-    "Sturm",
-    "Sturm",
-    "Sturm",
-    "Orkan",
-    "Orkan",
-    "Orkan",
-    "Panic Button",
-    "Panic Button",
-    "Panic Button",
-    "Panic Button",
-    "Blithschlag",
-    "Blithschlag",
-    "Blithschlag",
-    "Blithschlag",
-    "Erdbeben",
-    "Erdbeben",
-    "Erdbeben",
-    "Heilender Segen",
-    "Heilender Segen",
-    "Heilender Segen",
-    "Heilender Segen",
-    "Sintflut",
-    "Sintflut",
-    "Eiszeit",
-    "Eiszeit",
-    "Eiszeit"
-  ];
-  //Deck deklarieren
+  deck = Deck.map((card) => card);
   evaluationRound(); //Übergang in die Auswertungsrunde um Starthände zu verteilen
-
 }
 
 function drawCard(targetHand) {
@@ -91,25 +87,20 @@ function swapHealth() {
 }
 
 function evaluationRound() {
-
   while (stack.length >= 1) {
     cardEffects(stack[stack.length - 1], stack.length - 2);
     graveyard.push(stack[stack.length - 2])
     stack.length = stack.length - 2;
-
   }
-  //if (stack.length = 0; playerHandCards.length < numberOfHandCards || enemyHandCards.length < numberOfHandCards) {
-
   swapHealth();
   drawCards(playerHandCards);
   drawCards(enemyHandCards);
-  stackingRound();
+  // stackingRound();
 }
 
-function stackingRound() {
+// function stackingRound() {
+//   if (playerHandCards > 0 || enemyHandCards > 0) {
+//   }
+// }
 
-  if (playerHandCards > 0 || enemyHandCards > 0) {
-
-
-  }
-}
+window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
