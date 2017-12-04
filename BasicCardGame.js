@@ -1,11 +1,11 @@
-var deck = []; //Nachziehstapel
-var stack = []; //Ablagestapel
-var graveyard = []; //Friedhof für bereits ausgewertete Karten
-var enemyHealthPoints = []; //NPC Lebenspunkte
-var playerHealthPoints = []; //Spieler Lebenspunkte
-var numberOfHandCards; //Anzahl der maximalen Handkarten
-var enemyHandCards = []; //Handkarten des NPC's
-var playerHandCards = []; //Handkarten des Spielers
+let deck = []; //Nachziehstapel
+let stack = []; //Ablagestapel
+let graveyard = []; //Friedhof für bereits ausgewertete Karten
+let enemyHealthPoints = []; //NPC Lebenspunkte
+let playerHealthPoints = []; //Spieler Lebenspunkte
+let numberOfHandCards; //Anzahl der maximalen Handkarten
+let enemyHandCards = []; //Handkarten des NPC's
+let playerHandCards = []; //Handkarten des Spielers
 
 
 window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
@@ -88,7 +88,7 @@ function stackingRound() {
 }
 
 function swapHealth() {
-  var storeValue, storeIndex;
+  let storeValue, storeIndex;
   storeValue = Math.min(...playerHealthPoints);
   storeIndex = enemyHealthPoints.indexOf(Math.min(...enemyHealthPoints));
   playerHealthPoints[playerHealthPoints.indexOf(Math.min(...playerHealthPoints))] = Math.min(...enemyHealthPoints);
@@ -96,7 +96,7 @@ function swapHealth() {
 }
 
 function drawCard(targetHand) {
-  var i;
+  let i;
 
   while (targetHand.length < numberOfHandCards) {
     if (deck.length > 0) {
