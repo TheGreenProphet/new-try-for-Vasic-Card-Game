@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <img src="Grafiken/Funken.png" alt="Funken">
+    <img src="Grafiken/Glut.png" alt="Glut">
+    <img src="Grafiken/Feuerball.png" alt="Feuerball">
+    <img src="Grafiken/Sturm.png" alt="Sturm">
+    <img src="Grafiken/Orkan.png" alt="Orkan">
+    <img src="Grafiken/Panic_Button.png" alt="Panic Button">
+    <img src="Grafiken/Blitzschlag.png" alt="Blitzschlag">
+    <img src="Grafiken/Erdbeben.png" alt="Erdbeben">
+    <img src="Grafiken/Heilender_Segen.png" alt="Heilender Segen">
+    <img src="Grafiken/Sintflut.png" alt="Sintflut">
+    <img src="Grafiken/Eiszeit.png" alt="Eiszeit">
+    <img src="Grafiken/Kartenrücken.png" alt="Kartenrücken">
+    <script language="javascript" type="text/javascript" src="BasicCardGame.js"></script>
+</head>
+<body>
+<div id="meinSpielfeld">
+
+</div>
+
+<button type="button" name="startGameButton" onClick="startGame(this)" id="startGameButton">
+    Spiel starten
+</button>
+
+<button type="button" name="evaluationRound" onClick="evaluationRound()" id="evaluationButton">
+    Runde beenden, Auswertung beginnen
+</button>
+
+<button type="button" name="continueRound" onClick="drawCard(this)" id="continueRoundButton">
+    Runde fortsetzen
+</button>
+
+<button type="button" name="newStart" onClick="location.reload()" id="newStartButton">
+    Seite neu laden
+</button>
+
+<p id="playerCardsDisplay" aria-readonly="true"></p>
+
+<p id="gameFinishedText" aria-readonly="true">Congrats, all Cards drawn! <br> Now get over it and start a new game!</p>
+
+
+</body>
+</html>

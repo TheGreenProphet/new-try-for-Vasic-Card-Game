@@ -1,0 +1,49 @@
+#meinSpielfeld {
+    position:fixed;
+    left:0;
+    top:0;
+    width:1280px;
+    height:720px;
+    background-color:green;
+}
+
+#startGameButton {
+    position:fixed;
+    left:640px;
+    top:360px;
+    width:120px;
+    height:50px;
+}
+
+#evaluationRoundButton {
+    display:none;
+    position:fixed;
+    left:40px;
+    top:360px;
+    width:120px;
+    height:50px;
+}
+
+#playerCardsDisplay {
+    position: fixed;
+    left:200px;
+    top:600px;
+    height:50px;
+    resize: vertical;
+}
+
+#gameFinishedText {
+    display:none;
+    position: fixed;
+    left: 190px;
+    top: 325px;
+}
+
+#newStartButton {
+    display:none;
+    position:fixed;
+    left:190px;
+    top:225px;
+    width:120px;
+    height:50px;
+}
