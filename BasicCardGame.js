@@ -10,7 +10,6 @@ let playerHandCards = []; //Handkarten des Spielers
 
 window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
 
-
 function preGameFunction() { //vorbereitende Funktion
 
   enemyHealthPoints,
@@ -63,6 +62,34 @@ function preGameFunction() { //vorbereitende Funktion
 
 }
 
+function drawCard(targetHand) {
+  let i;
+
+  while (targetHand.length < numberOfHandCards) {
+    if (deck.length > 0) {
+      i = Math.floor(Math.random() * deck.length);
+
+      if (i in deck) {
+        targetHand.push(deck[i]);
+        deck.splice(i, 1);
+      }
+
+    } else if (deck.length < 1) {
+      deck = graveyard;
+      graveyard.length = 0;
+    }
+
+  }
+}
+
+function swapHealth() {
+  let storeValue, storeIndex;
+  storeValue = Math.min(...playerHealthPoints);
+  storeIndex = enemyHealthPoints.indexOf(Math.min(...enemyHealthPoints));
+  playerHealthPoints[playerHealthPoints.indexOf(Math.min(...playerHealthPoints))] = Math.min(...enemyHealthPoints);
+  enemyHealthPoints[storeIndex] = storeValue;
+}
+
 function evaluationRound() {
 
   while (stack.length >= 1) {
@@ -83,34 +110,6 @@ function stackingRound() {
 
   if (playerHandCards > 0 || enemyHandCards > 0) {
 
-
-  }
-}
-
-function swapHealth() {
-  let storeValue, storeIndex;
-  storeValue = Math.min(...playerHealthPoints);
-  storeIndex = enemyHealthPoints.indexOf(Math.min(...enemyHealthPoints));
-  playerHealthPoints[playerHealthPoints.indexOf(Math.min(...playerHealthPoints))] = Math.min(...enemyHealthPoints);
-  enemyHealthPoints[storeIndex] = storeValue;
-}
-
-function drawCard(targetHand) {
-  let i;
-
-  while (targetHand.length < numberOfHandCards) {
-    if (deck.length > 0) {
-      i = Math.floor(Math.random() * deck.length);
-
-      if (i in deck) {
-        targetHand.push(deck[i]);
-        deck.splice(i, 1);
-      }
-
-    } else if (deck.length < 1) {
-      deck = graveyard;
-      graveyard.length = 0;
-    }
 
   }
 }
