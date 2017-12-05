@@ -93,8 +93,8 @@ function evaluationRound() {
     stack.length = stack.length - 2;
   }
   swapHealth();
-  drawCards(playerHandCards);
-  drawCards(enemyHandCards);
+  drawCard(playerHandCards);
+  drawCard(enemyHandCards);
   // stackingRound();
 }
 
