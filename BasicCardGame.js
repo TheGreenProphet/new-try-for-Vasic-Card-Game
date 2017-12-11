@@ -58,7 +58,7 @@ function preGameFunction() { //vorbereitende Funktion
   evaluationRound(); //Übergang in die Auswertungsrunde um Starthände zu verteilen
 }
 
-function drawCard(targetHand) {
+/*function drawCard(targetHand) {
   let i;
 
   while (targetHand.length < numberOfHandCards) {
@@ -76,7 +76,8 @@ function drawCard(targetHand) {
     }
 
   }
-}
+  return;
+}*/
 
 function swapHealth() {
   let storeValue, storeIndex;
@@ -93,9 +94,15 @@ function evaluationRound() { // Funktion in der der Stack ausgewertet wird, jewe
     stack.length = stack.length - 2;
   }
   swapHealth();
-  drawCard(playerHandCards);
-  drawCard(enemyHandCards);
-  // stackingRound();
+  while (playerHandCards < numberOfHandCards){
+  randomCardPush(deck, playerHandCards);
+  //drawCard(playerHandCards);
+}
+while (enemyHandCards < numberOfHandCards){
+  randomCardPush(deck, enemyHandCards);
+  //drawCard(enemyHandCards);
+}
+  stackingRound();
 }
 
 
