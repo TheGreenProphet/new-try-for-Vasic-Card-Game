@@ -17,9 +17,9 @@ const Deck = [
   "Glut",
   "Glut",
   "Glut",
-  "Feuerball",
-  "Feuerball",
-  "Feuerball",
+  "Feuer",
+  "Feuer",
+  "Feuer",
   "Sturm",
   "Sturm",
   "Sturm",
@@ -86,10 +86,10 @@ function swapHealth() {
   enemyHealthPoints[storeIndex] = storeValue;
 }
 
-function evaluationRound() {
+function evaluationRound() { // Funktion in der der Stack ausgewertet wird, jeweils einer der beiden Lebenspunkte-"Würfel" pro SPiler miteinander vertauscht werden und neue Handkarten verteilt werden
   while (stack.length >= 1) {
-    cardEffects(stack[stack.length - 1], stack.length - 2);
-    graveyard.push(stack[stack.length - 2])
+    cardEffects(stack[stack.length - 1], stack[stack.length - 2]);
+    graveyard.push(stack[stack.length - 2]);
     stack.length = stack.length - 2;
   }
   swapHealth();
@@ -98,9 +98,34 @@ function evaluationRound() {
   // stackingRound();
 }
 
-// function stackingRound() {
-//   if (playerHandCards > 0 || enemyHandCards > 0) {
-//   }
-// }
+
+ function stackingRound() { //Funktion für die Spielphase in der Karten auf den Stack gelegt werden, aber im Normalfall noch keinen Effekt haben (im Moment noch random Karten der einzelnen Spieler)
+ let playerturn = true;
+ let i;
+   while (playerHandCards > 0 || enemyHandCards > 0) {
+    if (playerturn = true){
+      randomCardPush(playerHandCards,stack);
+      stack.push(1);
+      playerturn = false;
+   }
+   else if (playerturn = false){
+     randomCardPush(enemyHandCards,stack);
+     stack.push(2);
+     playerturn = true;
+   }
+ }
+ evaluationRound();
+}
+
+function randomCardPush(originArray,targetArray){ //Funktion zum "Pushen" einer Random "Karte" aus einem Quell-Array in ein Zielarray
+  let i;
+  i = Math.floor(Math.random() * originArray.length);
+
+  if (i in originArray) {
+    targetArray.push(deck[i]);
+    originArray.splice(i, 1);
+}
+return;
+}
 
 window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
