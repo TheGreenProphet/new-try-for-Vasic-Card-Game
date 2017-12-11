@@ -157,4 +157,19 @@ cardEffects(card, owner){
   "Eiszeit"
 }
 
+function doTargetDamage(target, damage){ //function for doing damage to ... a specific player
+
+}
+
+function doGlobalDamage(damage){ //... evey player
+  
+}
+
+function doGlobalDiceDamage(damage){ //... every dice
+  playerHealthPoints[1] = playerHealthPoints[1] - damage;
+  playerHealthPoints[2] = playerHealthPoints[2] - damage;
+  enemyHealthPoints[1] = enemyHealthPoints[1] - damage;
+  enemyHealthPoints[2] = enemyHealthPoints[2] - damage;
+}
+
 window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
