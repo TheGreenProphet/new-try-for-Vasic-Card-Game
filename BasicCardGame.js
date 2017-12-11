@@ -32,10 +32,10 @@ const Deck = [
   "Panic Button",
   "Panic Button",
   "Panic Button",
-  "Blithschlag",
-  "Blithschlag",
-  "Blithschlag",
-  "Blithschlag",
+  "Blitzschlag",
+  "Blitzschlag",
+  "Blitzschlag",
+  "Blitzschlag",
   "Erdbeben",
   "Erdbeben",
   "Erdbeben",
@@ -87,7 +87,7 @@ function swapHealth() {
   enemyHealthPoints[storeIndex] = storeValue;
 }
 
-function evaluationRound() { // Funktion in der der Stack ausgewertet wird, jeweils einer der beiden Lebenspunkte-"Würfel" pro SPiler miteinander vertauscht werden und neue Handkarten verteilt werden
+function evaluationRound() { // function for evaluating the stack, swaping a "dice" of each player with the other and
   while (stack.length >= 1) {
     cardEffects(stack[stack.length - 1], stack[stack.length - 2]);
     graveyard.push(stack[stack.length - 2]);
@@ -133,6 +133,28 @@ function randomCardPush(originArray,targetArray){ //Funktion zum "Pushen" einer 
     originArray.splice(i, 1);
 }
 return;
+}
+
+cardEffects(card, owner){
+  if (card = "Funken"){
+    if (owner = 1){
+
+    }
+    else if (owner = 2){
+
+    }
+  }
+
+  "Glut",
+  "Feuer",
+  "Sturm",
+  "Orkan",
+  "Panic Button",
+  "Blithschlag",
+  "Erdbeben",
+  "Heilender Segen",
+  "Sintflut",
+  "Eiszeit"
 }
 
 window.onload = preGameFunction(); //automatischer Scriptstart bei aufrufen der Seite
